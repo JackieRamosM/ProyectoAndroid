@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ComictiT!</string>
+    <string name="hello">Crea el comic que desees!</string>
+</resources>
