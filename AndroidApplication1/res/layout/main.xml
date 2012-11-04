@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/fondo">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Hola Denny! :D"
+    />        
+    <ImageView        
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:background="@drawable/icono"
+        android:layout_marginTop="65px"
+        android:layout_gravity="center"
+    />
+    <
+       
+    
+</LinearLayout>
+
