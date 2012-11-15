@@ -5,15 +5,6 @@
     android:background="@layout/fondo"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnComenzar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:text="¡A comiquear!"/>
-
     <ImageView
         android:id="@+id/imagenPrincipal"
         android:layout_width="500dp"
