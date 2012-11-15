@@ -11,16 +11,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:text="¡A comiquear!"/>
+        android:layout_marginBottom="29dp"
+        android:text="¡A comiquear!" />
 
     <ImageView
         android:id="@+id/imagenPrincipal"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="49dp"
         android:src="@drawable/icono" />
 
 </RelativeLayout>
