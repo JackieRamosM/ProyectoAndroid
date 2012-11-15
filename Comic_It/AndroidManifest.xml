@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".VtnPlantillas"></activity>
+        <activity android:name=".VtnEdicion"></activity>
+        <activity android:name=".Camera"></activity>
     </application>
 
 </manifest>
