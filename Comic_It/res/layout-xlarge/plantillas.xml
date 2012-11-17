@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/fondo"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Escoge una plantilla:"
+        android:textColor="#ffffff"
+        android:textSize="40dp"
+        android:paddingTop="80dp"/>
+    
+    <TextView
+        android:id="@+id/espacio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=" "/>
+    
+    <HorizontalScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_horizontal"
+		android:scrollbars="none">
+ 
+ 		<LinearLayout 
+     		android:layout_width="fill_parent"
+	 		android:layout_height="wrap_content"
+	 		android:orientation="horizontal">
+	 		
+ 		    <TextView
+        		android:id="@+id/espacio1"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:text="                         "/>
+     
+   			<ImageView
+   			    android:id="@+id/plantilla1"
+    			android:layout_width="400dp"
+    			android:layout_height="600dp"
+    			android:src="@drawable/plantilla1"/>
+   			
+ 		    <TextView
+        		android:id="@+id/espacio2"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:text="            "/>
+   			
+   			<ImageView
+   			    android:id="@+id/plantilla2"
+    			android:layout_width="400dp"
+    			android:layout_height="600dp"
+    			android:src="@drawable/plantilla2"/>
+   			
+   			<TextView
+        		android:id="@+id/espacio3"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:text="            "/>
+   			
+   			<ImageView
+   			    android:id="@+id/plantilla3"
+    			android:layout_width="400dp"
+    			android:layout_height="600dp"
+    			android:src="@drawable/plantilla3"/>
+
+		</LinearLayout>
+    
+	</HorizontalScrollView>
+	
+    <TextView
+        android:id="@+id/espacio4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=" "/>
+    
+    <Button
+        android:id="@+id/aceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"        
+        android:text="Aceptar"/>
+	       
+</LinearLayout>

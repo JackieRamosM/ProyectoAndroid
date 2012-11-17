@@ -1,0 +1,14 @@
+package com.example.burbujas;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.SurfaceView;
+
+public class Burbujas extends SurfaceView{
+
+	public Burbujas(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		// TODO Auto-generated constructor stub
+	}
+
+}
