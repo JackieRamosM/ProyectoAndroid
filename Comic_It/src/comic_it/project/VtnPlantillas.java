@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 /**
  *
@@ -16,7 +17,7 @@ import android.widget.ImageView;
 public class VtnPlantillas extends Activity {    
 	
 	Button aceptar;
-	ImageView img1, img2, img3;
+	ImageView img1, img2, img3, img;
 	Boolean cambio1 = false, cambio2 = false, cambio3 = false;
 	Intent intent;
 	
@@ -24,52 +25,26 @@ public class VtnPlantillas extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plantillas);
-        aceptar = (Button) findViewById(R.id.aceptar);
-        aceptar.getBackground().setColorFilter(0xFFFF0000, Mode.MULTIPLY);
-        addListenerOnImages();        
-        aceptar.setOnClickListener(new OnClickListener() {			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				finish();        
-		        intent = new Intent(VtnPlantillas.this,VtnEdicion.class);		        
-		        startActivity(intent);
-			}
-		});
-        
+        addListenerOnImage(img1,1);
+        addListenerOnImage(img2,2);
+        addListenerOnImage(img2,3);
+        img = (ImageView) findViewById(R.id.diseno);
+        img.setBaselineAlignBottom(true);
     }
     
-    public void addListenerOnImages(){   	 
- 		img1 = (ImageView) findViewById(R.id.plantilla1);
-  		img1.setOnClickListener(new OnClickListener(){
+    public void addListenerOnImage(ImageView img, int numero){
+    	if(numero == 1)
+    		img = (ImageView) findViewById(R.id.plantilla1);
+    	else if(numero == 2)
+    		img = (ImageView) findViewById(R.id.plantilla2);
+    	else if(numero == 3)
+    		img = (ImageView) findViewById(R.id.plantilla3);
+    	img.setOnClickListener(new OnClickListener(){
  			public void onClick(View arg0){
- 				cambio1 = !cambio1;
- 				if(cambio1)
- 					img1.setPadding(20,20,20,20);
- 				else
- 					img1.setPadding(0,0,0,0); 				
+ 				finish();        
+		        intent = new Intent(VtnPlantillas.this,VtnEdicion.class);		        
+		        startActivity(intent); 				
  			} 			
  		});
-  		
-  		img2 = (ImageView) findViewById(R.id.plantilla2);
-  		img2.setOnClickListener(new OnClickListener(){ 
- 			public void onClick(View arg0){
- 				cambio2 = !cambio2;
- 				if(cambio2)
- 					img2.setPadding(20,20,20,20);
- 				else
- 					img2.setPadding(0,0,0,0); 				
- 			} 
- 		});
-  		
-  		img3 = (ImageView) findViewById(R.id.plantilla3);
-  		img3.setOnClickListener(new OnClickListener(){ 
- 			public void onClick(View arg0){
- 				cambio3 = !cambio3;
- 				if(cambio3)
- 					img3.setPadding(20,20,20,20);
- 				else
- 					img3.setPadding(0,0,0,0); 				
- 			} 
- 		});  		
-    }
+    }    
 }
