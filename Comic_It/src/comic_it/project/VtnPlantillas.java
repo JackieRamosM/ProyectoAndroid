@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.PorterDuff.Mode;
 import android.os.Bundle;
-import android.text.style.UpdateLayout;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -19,6 +18,7 @@ public class VtnPlantillas extends Activity {
 	Button aceptar;
 	ImageView img1, img2, img3;
 	Boolean cambio1 = false, cambio2 = false, cambio3 = false;
+	Intent intent;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,21 +26,19 @@ public class VtnPlantillas extends Activity {
         setContentView(R.layout.plantillas);
         aceptar = (Button) findViewById(R.id.aceptar);
         aceptar.getBackground().setColorFilter(0xFFFF0000, Mode.MULTIPLY);
-        addListenerOnImages();
-        aceptar.setOnClickListener(new OnClickListener() {
-			
+        addListenerOnImages();        
+        aceptar.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				finish();        
-		        Intent intent = new Intent(VtnPlantillas.this,VtnEdicion.class);
+		        intent = new Intent(VtnPlantillas.this,VtnEdicion.class);		        
 		        startActivity(intent);
 			}
 		});
         
     }
     
-    public void addListenerOnImages(){
-   	 
+    public void addListenerOnImages(){   	 
  		img1 = (ImageView) findViewById(R.id.plantilla1);
   		img1.setOnClickListener(new OnClickListener(){
  			public void onClick(View arg0){
@@ -74,8 +72,4 @@ public class VtnPlantillas extends Activity {
  			} 
  		});  		
     }
-
-	
-    
-
 }
