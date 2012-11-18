@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_android_twitter">AndroidTwitterActivity</string>
+    <string name="hello">Hello World, AndroidTwitterActivity!</string>
+    <string name="app_name">prueba3</string>
+    <string name="post_ins">Mi aplicacion de Twitter en Android</string>
+    <string name="not_connected">  Twitter (No conectado) </string>
+    <string name="msg">Que esta pasando?</string>
+    <string name="post">Tweet</string>
+    <string name="status">Estado:</string>
+    <string name="twitter">  Twitter</string>
+    <string name="talk">Hablar</string>
+    <string name="read">LeerTweets</string>
+   <string name="readA">Leer Tweets</string>
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0000ff</color>
+
+    <string name="title_activity_show">ShowActivity</string>
+
+</resources>
