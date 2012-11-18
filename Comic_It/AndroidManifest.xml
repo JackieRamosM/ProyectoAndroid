@@ -20,9 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name=".VtnPlantillas"></activity>
-        <activity android:name=".VtnEdicion"></activity>
+        <activity android:name=".VtnEdicion"></activity>        
         <activity android:name=".Camera"></activity>
+        <activity android:name=".P1_comic"></activity>
+        <activity android:name=".P2_symbols"></activity>
+        <activity android:name=".P3_bubbles"></activity>
+        <activity android:name=".P4_done"></activity>        
     </application>
 
 </manifest>
