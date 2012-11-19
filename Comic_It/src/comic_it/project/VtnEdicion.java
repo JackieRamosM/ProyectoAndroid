@@ -3,18 +3,30 @@ import comic_it.project.R.id;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
-public class VtnEdicion extends TabActivity{	
-    
-	@Override
-    public void onCreate(Bundle savedInstanceState){    	
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.plantilla);
+public class VtnEdicion extends TabActivity implements android.view.View.OnClickListener{	
+	private ImageView foto_principal;
+	   Intent intent;
+	   int bundle_interrogacion;
+	   int bundle_camara;
+	 
+		@Override
+	    public void onCreate(Bundle savedInstanceState){    	
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.plantilla);
+	        bundle_interrogacion=getIntent().getExtras().getInt("imagen escogida");
+	        foto_principal.setImageResource(bundle_interrogacion);
+	        foto_principal.setOnClickListener(this);   
+	        bundle_camara=getIntent().getExtras().getInt("tomada camara");
+	        foto_principal.setImageResource(bundle_camara);
                         
         TabHost tabHost = getTabHost();
         
@@ -48,4 +60,11 @@ public class VtnEdicion extends TabActivity{
         tabHost.addTab(donespec);        
         tabHost.setBackgroundColor(Color.rgb(245,231,11));        
     }
+		
+
+		public void onClick(View arg0) {
+			intent = new Intent(VtnEdicion.this,Camera.class);		        
+		        startActivity(intent); 
+		        
+			}
 }
