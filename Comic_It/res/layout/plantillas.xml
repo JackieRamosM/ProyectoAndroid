@@ -62,5 +62,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"        
         android:layout_alignParentBottom="true"               
-        android:src="@drawable/diseno"/>	   
+        android:src="@drawable/diseno_m"/>	   
 </RelativeLayout>
