@@ -1,10 +1,7 @@
-package twitter.comicit;
-
-
+package comic_it.project;
 
 import java.util.ArrayList;
 
-import android.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -33,4 +30,3 @@ public class ShowActivity extends Activity {
         return true;
     }
 }
-

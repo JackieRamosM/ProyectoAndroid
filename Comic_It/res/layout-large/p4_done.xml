@@ -15,77 +15,129 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
-	        android:textAppearance="?android:attr/textAppearanceLarge"/>   
+	        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+	    <TextView
+	        android:id="@+id/textView9"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    <TextView
+	        android:id="@+id/textView10"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+   
 	    <TextView
 	        android:id="@+id/textView2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
 	        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
 	    <TextView
 	        android:id="@+id/textView3"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="     Solo guardar:"
 	        android:textAppearance="?android:attr/textAppearanceLarge"
-	        android:textColor="@color/white" />
+	        android:textColor="@color/white"
+	        android:textSize="@android:dimen/app_icon_size" />
+
 		<TextView
 	        android:id="@+id/textView4"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
 	        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		<TextView
+		    android:id="@+id/textView11"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+
 	    <Button
 	        android:id="@+id/guardar"
-	        android:layout_width="160dp"
-	        android:layout_height="wrap_content"
+	        android:layout_width="320dp"
+	        android:layout_height="100dp"
 	        android:layout_gravity="center"
-	        android:text="Guardar" />	    
+	        android:text="Guardar"
+	        android:textSize="@android:dimen/app_icon_size" />
+	    
 	   	<TextView
 	        android:id="@+id/textView5"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
 	        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+	   	<TextView
+	   	    android:id="@+id/textView12"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:textAppearance="?android:attr/textAppearanceLarge" />
+
 	    <TextView
 	        android:id="@+id/textView6"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="     Compartir:"
 	        android:textAppearance="?android:attr/textAppearanceLarge"
-	        android:textColor="@color/white" />	
+	        android:textColor="@color/white"
+	        android:textSize="@android:dimen/app_icon_size" />
+
+	    <TextView
+	        android:id="@+id/textView13"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
 		<TextView
 	        android:id="@+id/textView7"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
 	        android:textAppearance="?android:attr/textAppearanceSmall"/>		
+
 	    <Button
 	        android:id="@+id/twitter"
-	        android:layout_width="160dp"
-	        android:layout_height="wrap_content"
+	        android:layout_width="320dp"
+	        android:layout_height="100dp"
 	        android:layout_gravity="center"
-	        android:text="Twitter" />		  
+	        android:text="Twitter"
+	        android:textSize="@android:dimen/app_icon_size" />
+
+	    <TextView
+	        android:id="@+id/textView14"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+		  
 		<TextView
 	        android:id="@+id/textView8"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text=""
 	        android:textAppearance="?android:attr/textAppearanceSmall"/>	    
-
+
 	    <Button
 	        android:id="@+id/google"
 	        style="@color/blue"
-	        android:layout_width="160dp"
-	        android:layout_height="wrap_content"
+	        android:layout_width="320dp"
+	        android:layout_height="100dp"
 	        android:layout_gravity="center"
-	        android:text="Google+" />
+	        android:text="Google+"
+	        android:textSize="@android:dimen/app_icon_size" />
 	
 	</LinearLayout>
+
     <ImageView
         android:id="@+id/diseno"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"        
-        android:layout_alignParentBottom="true"               
-        android:src="@drawable/diseno_m"/>	   
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/diseno_h" />
+	   
 </RelativeLayout>

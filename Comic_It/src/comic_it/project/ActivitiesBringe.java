@@ -1,4 +1,4 @@
-package twitter.comicit;
+package comic_it.project;
 
 import java.util.ArrayList;
 

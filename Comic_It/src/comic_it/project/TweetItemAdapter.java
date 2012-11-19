@@ -1,4 +1,4 @@
-package twitter.comicit;
+package comic_it.project;
 
 import java.net.URL;
 import java.util.ArrayList;

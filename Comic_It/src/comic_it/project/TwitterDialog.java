@@ -1,4 +1,4 @@
-package twitter.comicit;
+package comic_it.project;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -22,8 +22,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.prueba3.TwitterApp.TwDialogListener;
-import com.example.prueba3.R;
+import comic_it.project.TwitterApp.TwDialogListener;
+import comic_it.project.R;
 
 public class TwitterDialog extends Dialog {
 

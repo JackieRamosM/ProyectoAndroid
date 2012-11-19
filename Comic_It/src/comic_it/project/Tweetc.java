@@ -1,4 +1,4 @@
-package twitter.comicit;
+package comic_it.project;
 
 public class Tweetc {
 	  public String username;

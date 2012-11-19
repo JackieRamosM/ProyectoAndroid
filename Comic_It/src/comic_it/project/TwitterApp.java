@@ -1,4 +1,4 @@
-package twitter.comicit;
+package comic_it.project;
 
 
 import java.net.MalformedURLException;
@@ -228,17 +228,14 @@ public class TwitterApp {
 
 	private void showLoginDialog(String url) {
 		final TwDialogListener listener = new TwDialogListener() {
-			@Override
 			public void onComplete(String value) {
 				processToken(value);
 			}
 
-			@Override
 			public void onError(String value) {
 				mListener.onError("Error al abrir la pagina de autorizacion");
 			}
 		};
-
 		new TwitterDialog(context, url, listener).show();
 	}
 
