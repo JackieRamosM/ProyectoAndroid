@@ -42,7 +42,7 @@ public class TwitterApp {
 
 
 //	 public static final String CALLBACK_URL = "twitterapp://connect"; 
- 	 public static final String CALLBACK_URL = "app://prueba3";
+ 	 public static final String CALLBACK_URL = "app://comic_it";
 	private static final String TAG = "TwitterApp";
 
 	public TwitterApp(Context context, String consumerKey, String secretKey) {
