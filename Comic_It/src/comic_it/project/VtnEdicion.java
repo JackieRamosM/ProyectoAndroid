@@ -17,6 +17,7 @@ public class VtnEdicion extends TabActivity implements android.view.View.OnClick
 	   Intent intent;
 	   int bundle_interrogacion;
 	   int bundle_camara;
+	   int bundle_texto;
 	 
 		@Override
 	    public void onCreate(Bundle savedInstanceState){    	
@@ -41,6 +42,10 @@ public class VtnEdicion extends TabActivity implements android.view.View.OnClick
         symbolsspec.setIndicator("Symbol",this.getResources().getDrawable(R.drawable.pes2_symbols));        
         Intent symbolsIntent = new Intent(VtnEdicion.this,P2_symbols.class);
         symbolsspec.setContent(symbolsIntent);
+        bundle_texto=getIntent().getExtras().getInt("texto seleccionado");
+        ImageView texto= new ImageView(this);
+        texto.setImageResource(bundle_texto);
+        
  
         // Tab for Bubbles
         TabSpec bubblesspec = tabHost.newTabSpec("Bubble");
