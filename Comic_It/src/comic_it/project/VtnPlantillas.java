@@ -1,5 +1,6 @@
 package comic_it.project;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.PorterDuff.Mode;
@@ -21,7 +22,8 @@ public class VtnPlantillas extends Activity {
 	Boolean cambio1 = false, cambio2 = false, cambio3 = false;
 	Intent intent;
 	
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plantillas);
@@ -42,7 +44,8 @@ public class VtnPlantillas extends Activity {
     	img.setOnClickListener(new OnClickListener(){
  			public void onClick(View arg0){
  				finish();        
-		        intent = new Intent(VtnPlantillas.this,VtnEdicion.class);		        
+		        intent = new Intent(VtnPlantillas.this,VtnEdicion.class);
+		        intent.putExtra("plantilla",R.layout.activity_plantilla);
 		        startActivity(intent); 				
  			} 			
  		});
