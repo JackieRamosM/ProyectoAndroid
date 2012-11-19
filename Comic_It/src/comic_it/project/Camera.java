@@ -107,6 +107,7 @@ public class Camera extends Activity {
     public void RegresarAEdicion(ImageView iv){
         finish();        
         Intent intent = new Intent(Camera.this,VtnEdicion.class);
+        intent.putExtra("tomada camara",R.id.FotoTomada);
         startActivity(intent);
         
     }
