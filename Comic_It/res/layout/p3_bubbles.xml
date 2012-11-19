@@ -1,16 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@layout/fondo">
- 
-  <!-- Screen Design for Photos -->
-  <TextView android:text="BUBBLES HERE"
-            android:padding="15dip"
-            android:textSize="18dip"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
- 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ImageView
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:src="@drawable/r1"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivPrincipal_bur"
+     />
+
+<HorizontalScrollView android:layout_width="250dp" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+    					android:scrollbars="none" >
+ <LinearLayout 
+     android:layout_width="fill_parent"
+	 android:layout_height="wrap_content"
+	 android:orientation="horizontal"
+     >
+     
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/r1"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivR1"
+     />
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/r2"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivR2"
+    android:paddingLeft="15dp"
+     />
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/r3"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivR3"
+    android:paddingLeft="15dp"
+     />  
+     <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/r4"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivR4"
+     android:paddingLeft="15dp"
+     />
+     
+     <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/v1"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivV1"
+     android:paddingLeft="15dp"
+     />
+     
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/v2"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivV2"
+    android:paddingLeft="15dp"
+     />
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/v3"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivV3"
+    android:paddingLeft="15dp"
+     />  
+     <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/v4"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivV4"
+     android:paddingLeft="15dp"
+     />       
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/n1"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivN1"
+     android:paddingLeft="15dp"
+     />
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/n2"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivN2"
+    android:paddingLeft="15dp"
+     />
+   <ImageView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/n3"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/ivN3"
+    android:paddingLeft="15dp"
+     />  
+
+ </LinearLayout>
+    
+</HorizontalScrollView>
+
+
+
 </LinearLayout>
