@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
 	EditText et;
 	Button bt;
 	TextView tv;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -30,11 +32,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = new TextView(this);
+        et= new EditText(this);
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.l1);
         RelativeLayout rl = new RelativeLayout(this);    
         
-        Lienzo fondo=new Lienzo(this);
-        et= (EditText) findViewById(R.id.editText1);
+       // Lienzo fondo=new Lienzo(this);
+       // et= (EditText) findViewById(R.id.editText1);
         bt=(Button)findViewById(R.id.button1);
         
         
@@ -50,15 +53,18 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				s = et.getText().toString();
-				tv.setText(s);		
+				//s = et.getText().toString();
+				//tv.setText(s);		
 				
 			}
 		});
        
        	linearLayout.addView(rl);
-        rl.addView(fondo);
-       	rl.addView(tv);
+       int color =  -65536;
+		// rl.addView(fondo);
+       //	rl.addView(tv);
+       	rl.setBackgroundColor(color);     	
+        rl.addView(et);
     }
     
     
@@ -75,7 +81,7 @@ public class MainActivity extends Activity {
             int alto=canvas.getHeight();
           
             Bitmap bmp=BitmapFactory.decodeResource(getResources(), R.drawable.burbuja);
-            canvas.drawBitmap(bmp, (ancho-250)/2,(alto-200)/2, null);
+            canvas.drawBitmap(bmp, 0,0, null);
         }
     }    
 

@@ -10,19 +10,6 @@
         android:orientation="vertical" >
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="108dp"
-        android:ems="10"
-        android:inputType="textMultiLine" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
