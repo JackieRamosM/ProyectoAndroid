@@ -7747,3 +7747,6 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2012-11-19 22:14:30.953
 !MESSAGE Failed to load properties file for project 'com.example.prueba3.AndroidTwitterActivity'
+
+!ENTRY org.eclipse.ui 2 2 2012-11-19 22:22:17.111
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
