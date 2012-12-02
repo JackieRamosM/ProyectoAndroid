@@ -1,0 +1,257 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#3562c8"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/espaciov1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:text=" "
+        android:textSize="@android:dimen/app_icon_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="649dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="71dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/comic"
+            android:layout_width="450dp"
+            android:layout_height="650dp"
+            android:background="#ffffff" >
+
+            <ImageView
+                android:id="@+id/p1_img1"
+                android:layout_width="225dp"
+                android:layout_height="222dp"
+                android:layout_alignBottom="@+id/p1_img2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="#919191" />
+
+            <ImageView
+                android:id="@+id/p1_img2"
+                android:layout_width="225dp"
+                android:layout_height="220dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#bcbcbc" />
+
+            <ImageView
+                android:id="@+id/p1_img3"
+                android:layout_width="220dp"
+                android:layout_height="215dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/p1_img2"
+                android:background="#6e6e6e" />
+
+            <ImageView
+                android:id="@+id/p1_img4"
+                android:layout_width="225dp"
+                android:layout_height="215dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="#bcbcbc" />
+
+            <ImageView
+                android:id="@+id/p1_img5"
+                android:layout_width="225dp"
+                android:layout_height="215dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="#919191" />
+
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg2_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg3_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg4_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg5_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg6_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg7_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg8_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono8_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg9_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg10_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono10_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg11_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono11_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg12_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg13_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg14_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg15_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/vg_icono15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/guardar"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="74dp"
+        android:layout_marginTop="20dp"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/twitter"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="224dp"
+        android:layout_marginTop="-50dp"
+        android:text="Compartir" />
+    
+    <Button
+        android:id="@+id/about"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="-50dp"
+        android:text="+"/>
+
+</LinearLayout>	
