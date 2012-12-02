@@ -42,26 +42,50 @@
 	        		android:text="                   "/>     
 	   			<ImageView
 	   			    android:id="@+id/plantilla1"
-	    			android:layout_width="404dp"
-	    			android:layout_height="606dp"
-	    			android:src="@drawable/plantilla1"/>   			
+	    			android:layout_width="410dp"
+	    			android:layout_height="612dp"
+	    			android:src="@drawable/plantilla1"/>
+	   			<TextView
+	        		android:id="@+id/espacio1"
+	        		android:layout_width="fill_parent"
+	        		android:layout_height="fill_parent"
+	        		android:text="       "/>
 	   			<ImageView
 	   			    android:id="@+id/plantilla2"
-	    			android:layout_width="404dp"
-	    			android:layout_height="606dp"
-	    			android:src="@drawable/plantilla2"/>   			
+	    			android:layout_width="410dp"
+	    			android:layout_height="612dp"
+	    			android:src="@drawable/plantilla2"/>
+	   			<TextView
+	        		android:id="@+id/espacio1"
+	        		android:layout_width="fill_parent"
+	        		android:layout_height="fill_parent"
+	        		android:text="       "/>   			
 	   			<ImageView
 	   			    android:id="@+id/plantilla3"
-	    			android:layout_width="404dp"
-	    			android:layout_height="606dp"
+	    			android:layout_width="410dp"
+	    			android:layout_height="612dp"
 	    			android:src="@drawable/plantilla3"/>
+	   			<TextView
+	        		android:id="@+id/espacio1"
+	        		android:layout_width="fill_parent"
+	        		android:layout_height="fill_parent"
+	        		android:text="       "/>
+	   			<ImageView
+	   			    android:id="@+id/plantilla4"
+	    			android:layout_width="410dp"
+	    			android:layout_height="612dp"
+	    			android:src="@drawable/plantilla4"/>
+	   			<TextView
+	        		android:id="@+id/espacio1"
+	        		android:layout_width="fill_parent"
+	        		android:layout_height="fill_parent"
+	        		android:text="       "/>
+	   			<ImageView
+	   			    android:id="@+id/plantilla5"
+	    			android:layout_width="410dp"
+	    			android:layout_height="612dp"
+	    			android:src="@drawable/plantilla5"/>	   			
 			</LinearLayout>    
 		</HorizontalScrollView>
-	</LinearLayout>
-    <ImageView
-        android:id="@+id/diseno"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"        
-        android:layout_alignParentBottom="true"               
-        android:src="@drawable/diseno_h"/>	   
+	</LinearLayout>	   
 </RelativeLayout>
