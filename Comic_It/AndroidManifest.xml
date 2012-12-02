@@ -27,23 +27,7 @@
         <activity android:name=".P1_comic"></activity>
         <activity android:name=".P2_symbols"></activity>
         <activity android:name=".P3_bubbles"></activity>
-        <activity android:name=".P4_done"></activity>
-        <activity android:name=".AndroidTwitterActivity">   
-             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:host="prueba3"
-                    android:scheme="app" />
-                </intent-filter>         
-            
-            
-        </activity>
-        <activity
-            android:name=".ShowActivity">
-           
-        </activity>     
+        <activity android:name=".P4_done"></activity>                
     </application>
 
 </manifest>
