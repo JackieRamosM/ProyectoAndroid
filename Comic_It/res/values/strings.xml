@@ -5,7 +5,7 @@
     <string name="title_activity_main">Comic It!</string>
     <string name="title_activity_android_twitter">AndroidTwitterActivity</string>
     <string name="hello">Hello World, AndroidTwitterActivity!</string>
-    <string name="post_ins">Mi aplicacion de Twitter en Android</string>
+    <string name="post_ins">  Comic It!!</string>
     <string name="not_connected">  Twitter (No conectado) </string>
     <string name="msg">Que esta pasando?</string>
     <string name="post">Tweet</string>

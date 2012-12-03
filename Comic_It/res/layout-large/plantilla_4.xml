@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#3562c8"
+    android:background="@layout/fondo"
     android:orientation="vertical" >
     <TextView
         android:id="@+id/espaciov1"
@@ -63,151 +63,161 @@
             
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg1_4"
+                android:id="@+id/vg1_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono1_4"
+                    android:id="@+id/vg_icono1_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg2_4"
+                android:id="@+id/vg2_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono2_4"
+                    android:id="@+id/vg_icono2_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg3_4"
+                android:id="@+id/vg3_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono3_4"
+                    android:id="@+id/vg_icono3_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg4_4"
+                android:id="@+id/vg4_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono4_4"
+                    android:id="@+id/vg_icono4_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg5_4"
+                android:id="@+id/vg5_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono5_4"
+                    android:id="@+id/vg_icono5_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg6_4"
+                android:id="@+id/vg6_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono6_4"
+                    android:id="@+id/vg_icono6_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg7_4"
+                android:id="@+id/vg7_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono7_4"
+                    android:id="@+id/vg_icono7_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg8_4"
+                android:id="@+id/vg8_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/vg_icono8_4"
+                    android:id="@+id/vg_icono8_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg9_4"
+                android:id="@+id/vg9_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono9_4"
+                <TextView
+                    android:id="@+id/vg_icono9_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg10_4"
+                android:id="@+id/vg10_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono10_4"
+                <TextView
+                    android:id="@+id/vg_icono10_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg11_4"
+                android:id="@+id/vg11_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono11_4"
+                <TextView
+                    android:id="@+id/vg_icono11_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg12_4"
+                android:id="@+id/vg12_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono12_4"
+                <TextView
+                    android:id="@+id/vg_icono12_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg13_4"
+                android:id="@+id/vg13_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono13_4"
+                <TextView
+                    android:id="@+id/vg_icono13_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg14_4"
+                android:id="@+id/vg14_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono14_4"
+                <TextView
+                    android:id="@+id/vg_icono14_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
             <FrameLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/vg15_4"
+                android:id="@+id/vg15_1"
                 android:layout_width="wrap_content" 
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/vg_icono15_4"
+                <TextView
+                    android:id="@+id/vg_icono15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/vg16_1"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/vg_icono16_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </FrameLayout>
@@ -216,6 +226,7 @@
     </LinearLayout>
         <Button
         android:id="@+id/guardar"
+        android:background="@layout/colorbutton"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="right"
@@ -224,14 +235,16 @@
         android:text="Guardar" />
     <Button
         android:id="@+id/twitter"
+        android:background="@layout/colorbutton"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="right"
-        android:layout_marginRight="224dp"
+        android:layout_marginRight="230dp"
         android:layout_marginTop="-50dp"       
-        android:text="Compartir"/>
+        android:text="Ir a"/>
 	<Button
         android:id="@+id/about"
+        android:background="@layout/colorbutton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="left"

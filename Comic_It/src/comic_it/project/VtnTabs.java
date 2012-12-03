@@ -37,6 +37,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TabHost;
@@ -66,16 +67,28 @@ public class VtnTabs extends TabActivity{
         Intent comicIntent = new Intent(VtnTabs.this,P1_comic.class);  
         bundle_plantilla = getIntent().getExtras().getInt("plantilla");
     
-        /*
-		 *  CODIGO DEL SWITCH DEL BUNDLE
-		 *	AQUI.
-		 */
-		 
+        switch(bundle_plantilla){
+        	case R.id.plantilla1:
+        		comicIntent.putExtra("cargarPlantilla",R.id.plantilla1);
+    		break;
+        	case R.id.plantilla2:
+        		comicIntent.putExtra("cargarPlantilla",R.id.plantilla2);
+    		break;
+        	case R.id.plantilla3:
+        		comicIntent.putExtra("cargarPlantilla",R.id.plantilla3);
+        	break;
+        	case R.id.plantilla4:
+        		comicIntent.putExtra("cargarPlantilla",R.id.plantilla4);
+        	break;
+        	case R.id.plantilla5:
+        		comicIntent.putExtra("cargarPlantilla",R.id.plantilla5);
+        	break;        	
+        }  
         comicspec.setContent(comicIntent);               
-  
+ 
         //Tab for Symbols
         TabSpec symbolsspec = tabHost.newTabSpec("Symbol");
-        symbolsspec.setIndicator("Symbol",this.getResources().getDrawable(R.drawable.pes2_symbols));        
+        symbolsspec.setIndicator("Imagenes",this.getResources().getDrawable(R.drawable.pes2_symbols));        
         Intent symbolsIntent = new Intent(VtnTabs.this,P1_comic.P2_symbols.class);
         symbolsspec.setContent(symbolsIntent);
         //RECUPERANDO EL ID DEL TEXTO ESCOGIDO
@@ -87,7 +100,7 @@ public class VtnTabs extends TabActivity{
  
         // Tab for Bubbles
         TabSpec bubblesspec = tabHost.newTabSpec("Bubble");
-        bubblesspec.setIndicator("Bubble",this.getResources().getDrawable(R.drawable.pes3_bubbles));
+        bubblesspec.setIndicator("Texto",this.getResources().getDrawable(R.drawable.pes3_bubbles));
         Intent bubblesIntent = new Intent(VtnTabs.this,P1_comic.P3_bubbles.class);
         bubblesspec.setContent(bubblesIntent);        
                            
@@ -108,8 +121,8 @@ public class VtnTabs extends TabActivity{
 	 *				los diferentes íconos y/o textos que pueden ser agregados.	 
 	 */
 	public static class P1_comic extends Activity{
-
-			//TODO EL CODIGO DE P1 AQUI	private static final int PICK_FROM_CAMERA = 1;
+		
+		private static final int PICK_FROM_CAMERA = 1;
 		private static final int CROP_FROM_CAMERA = 2;
 		private static final int PICK_FROM_FILE = 3;
 		private int TAKE_PICTURE = 1;
@@ -127,16 +140,17 @@ public class VtnTabs extends TabActivity{
 		Drawable d;
 		
 		public static ArrayList<ImageView> imagenes = new ArrayList<ImageView>();
-		public static ViewGroup vg1, vg2, vg3, vg4, vg5, vg6, vg7, vg8, vg9, vg10, vg11, vg12, vg13, vg14, vg15;
-		public static ImageView over_1, over_2, over_3, over_4, over_5, over_6, over_7, over_8, over_9, over_10, over_11, over_12, over_13, over_14, over_15;
+		public static ArrayList<TextView> textos = new ArrayList<TextView>();
+		public static ViewGroup vg1, vg2, vg3, vg4, vg5, vg6, vg7, vg8, vg9, vg10, vg11, vg12, vg13, vg14, vg15, vg16;
+		public static ImageView over_1, over_2, over_3, over_4, over_5, over_6, over_7, over_8;
+		public static TextView text_1, text_2, text_3, text_4, text_5, text_6, text_7, text_8;
 				  		
-		int bundle_comic,bundle_camara,i=0,offset_x = 0,offset_y = 0;						
+		int bundle_comic,bundle_camara,i=0,offset_x = 0,offset_y = 0;								
 		
-
 		@Override
 	    public void onCreate(Bundle savedInstanceState){
-	        super.onCreate(savedInstanceState);
-	        bundle_comic = getIntent().getExtras().getInt("cargarPlantilla");
+	        super.onCreate(savedInstanceState);	       	        
+	        bundle_comic = getIntent().getExtras().getInt("cargarPlantilla");	        	        
 	        
 	        final String [] items = new String [] {"Camara", "Galeria"};				
 			ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.select_dialog_item,items);
@@ -162,11 +176,11 @@ public class VtnTabs extends TabActivity{
 		                intent.setAction(Intent.ACTION_GET_CONTENT);			                
 		                startActivityForResult(Intent.createChooser(intent, "Complete action using"), PICK_FROM_FILE);
 					}
-				}
+				}											
 			});
 			
 			final AlertDialog dialog = builder.create();
-			
+									
 	        switch(bundle_comic){
 	        	case R.id.plantilla1:
 	        		setContentView(R.layout.plantilla_1);
@@ -205,8 +219,8 @@ public class VtnTabs extends TabActivity{
 							dialog.show();
 							i=5;
 						}
-					});	
-		
+					});		
+					
 					over_1 = (ImageView) findViewById(R.id.vg_icono1_1); imagenes.add(over_1);
 					over_2 = (ImageView) findViewById(R.id.vg_icono2_1); imagenes.add(over_2);
 					over_3 = (ImageView) findViewById(R.id.vg_icono3_1); imagenes.add(over_3);
@@ -215,13 +229,14 @@ public class VtnTabs extends TabActivity{
 					over_6 = (ImageView) findViewById(R.id.vg_icono6_1); imagenes.add(over_6);
 					over_7 = (ImageView) findViewById(R.id.vg_icono7_1); imagenes.add(over_7);
 					over_8 = (ImageView) findViewById(R.id.vg_icono8_1); imagenes.add(over_8);
-					over_9 = (ImageView) findViewById(R.id.vg_icono9_1); imagenes.add(over_9);
-					over_10 = (ImageView) findViewById(R.id.vg_icono10_1); imagenes.add(over_10);
-					over_11 = (ImageView) findViewById(R.id.vg_icono11_1); imagenes.add(over_11);
-					over_12 = (ImageView) findViewById(R.id.vg_icono12_1); imagenes.add(over_12);
-					over_13 = (ImageView) findViewById(R.id.vg_icono13_1); imagenes.add(over_13);
-					over_14 = (ImageView) findViewById(R.id.vg_icono14_1); imagenes.add(over_14);
-					over_15 = (ImageView) findViewById(R.id.vg_icono15_1); imagenes.add(over_15);
+					text_1 = (TextView) findViewById(R.id.vg_icono9_1); textos.add(text_1);
+					text_2 = (TextView) findViewById(R.id.vg_icono10_1); textos.add(text_2);
+					text_3 = (TextView) findViewById(R.id.vg_icono11_1); textos.add(text_3);
+					text_4 = (TextView) findViewById(R.id.vg_icono12_1); textos.add(text_4);
+					text_5 = (TextView) findViewById(R.id.vg_icono13_1); textos.add(text_5);
+					text_6 = (TextView) findViewById(R.id.vg_icono14_1); textos.add(text_6);
+					text_7 = (TextView) findViewById(R.id.vg_icono15_1); textos.add(text_7);
+					text_8 = (TextView) findViewById(R.id.vg_icono16_1); textos.add(text_8);					
 										
 					vg1 = (ViewGroup) findViewById(R.id.vg1_1);
 			        	agregarDrag_and_Drop(vg1,over_1);
@@ -240,20 +255,22 @@ public class VtnTabs extends TabActivity{
 			        vg8 = (ViewGroup) findViewById(R.id.vg8_1);
 			        	agregarDrag_and_Drop(vg8,over_8);
 			        vg9 = (ViewGroup) findViewById(R.id.vg9_1);
-			        	agregarDrag_and_Drop(vg9,over_9);
+			        	agregarDrag_and_DropTexto(vg9,text_1);
 			        vg10 = (ViewGroup) findViewById(R.id.vg10_1);
-			        	agregarDrag_and_Drop(vg10,over_10);
+			        	agregarDrag_and_DropTexto(vg10,text_2);
 			        vg11 = (ViewGroup) findViewById(R.id.vg11_1);
-			        	agregarDrag_and_Drop(vg11,over_11);
+			        	agregarDrag_and_DropTexto(vg11,text_3);
 			        vg12 = (ViewGroup) findViewById(R.id.vg12_1);
-			        	agregarDrag_and_Drop(vg12,over_12);
+			        	agregarDrag_and_DropTexto(vg12,text_4);
 			        vg13 = (ViewGroup) findViewById(R.id.vg13_1);
-			        	agregarDrag_and_Drop(vg13,over_13);
+			        	agregarDrag_and_DropTexto(vg13,text_5);
 			        vg14 = (ViewGroup) findViewById(R.id.vg14_1);
-			        	agregarDrag_and_Drop(vg14,over_14);
+			        	agregarDrag_and_DropTexto(vg14,text_6);
 			        vg15 = (ViewGroup) findViewById(R.id.vg15_1);
-			        	agregarDrag_and_Drop(vg15,over_15);			        
-			        			
+			        	agregarDrag_and_DropTexto(vg15,text_7);
+			        vg16 = (ViewGroup) findViewById(R.id.vg16_1);
+			        	agregarDrag_and_DropTexto(vg16,text_8);
+			        	
 	    		break;
 	        	case R.id.plantilla2:
 	        		setContentView(R.layout.plantilla_2);
@@ -286,6 +303,56 @@ public class VtnTabs extends TabActivity{
 							i=4;
 						}
 					});			
+					
+					over_1 = (ImageView) findViewById(R.id.vg_icono1_1); imagenes.add(over_1);
+					over_2 = (ImageView) findViewById(R.id.vg_icono2_1); imagenes.add(over_2);
+					over_3 = (ImageView) findViewById(R.id.vg_icono3_1); imagenes.add(over_3);
+					over_4 = (ImageView) findViewById(R.id.vg_icono4_1); imagenes.add(over_4);
+					over_5 = (ImageView) findViewById(R.id.vg_icono5_1); imagenes.add(over_5);
+					over_6 = (ImageView) findViewById(R.id.vg_icono6_1); imagenes.add(over_6);
+					over_7 = (ImageView) findViewById(R.id.vg_icono7_1); imagenes.add(over_7);
+					over_8 = (ImageView) findViewById(R.id.vg_icono8_1); imagenes.add(over_8);
+					text_1 = (TextView) findViewById(R.id.vg_icono9_1); textos.add(text_1);
+					text_2 = (TextView) findViewById(R.id.vg_icono10_1); textos.add(text_2);
+					text_3 = (TextView) findViewById(R.id.vg_icono11_1); textos.add(text_3);
+					text_4 = (TextView) findViewById(R.id.vg_icono12_1); textos.add(text_4);
+					text_5 = (TextView) findViewById(R.id.vg_icono13_1); textos.add(text_5);
+					text_6 = (TextView) findViewById(R.id.vg_icono14_1); textos.add(text_6);
+					text_7 = (TextView) findViewById(R.id.vg_icono15_1); textos.add(text_7);
+					text_8 = (TextView) findViewById(R.id.vg_icono16_1); textos.add(text_8);					
+										
+					vg1 = (ViewGroup) findViewById(R.id.vg1_1);
+			        	agregarDrag_and_Drop(vg1,over_1);
+			        vg2 = (ViewGroup) findViewById(R.id.vg2_1);
+			        	agregarDrag_and_Drop(vg2,over_2);
+			        vg3 = (ViewGroup) findViewById(R.id.vg3_1);
+			        	agregarDrag_and_Drop(vg3,over_3);
+			        vg4 = (ViewGroup) findViewById(R.id.vg4_1);
+			        	agregarDrag_and_Drop(vg4,over_4);
+			        vg5 = (ViewGroup) findViewById(R.id.vg5_1);
+			        	agregarDrag_and_Drop(vg5,over_5);
+			        vg6 = (ViewGroup) findViewById(R.id.vg6_1);
+			        	agregarDrag_and_Drop(vg6,over_6);
+			        vg7 = (ViewGroup) findViewById(R.id.vg7_1);
+			        	agregarDrag_and_Drop(vg7,over_7);
+			        vg8 = (ViewGroup) findViewById(R.id.vg8_1);
+			        	agregarDrag_and_Drop(vg8,over_8);
+			        vg9 = (ViewGroup) findViewById(R.id.vg9_1);
+			        	agregarDrag_and_DropTexto(vg9,text_1);
+			        vg10 = (ViewGroup) findViewById(R.id.vg10_1);
+			        	agregarDrag_and_DropTexto(vg10,text_2);
+			        vg11 = (ViewGroup) findViewById(R.id.vg11_1);
+			        	agregarDrag_and_DropTexto(vg11,text_3);
+			        vg12 = (ViewGroup) findViewById(R.id.vg12_1);
+			        	agregarDrag_and_DropTexto(vg12,text_4);
+			        vg13 = (ViewGroup) findViewById(R.id.vg13_1);
+			        	agregarDrag_and_DropTexto(vg13,text_5);
+			        vg14 = (ViewGroup) findViewById(R.id.vg14_1);
+			        	agregarDrag_and_DropTexto(vg14,text_6);
+			        vg15 = (ViewGroup) findViewById(R.id.vg15_1);
+			        	agregarDrag_and_DropTexto(vg15,text_7);
+			        vg16 = (ViewGroup) findViewById(R.id.vg16_1);
+			        	agregarDrag_and_DropTexto(vg16,text_8);
 	    		break;
 	        	case R.id.plantilla3:
 	        		setContentView(R.layout.plantilla_3);
@@ -304,7 +371,58 @@ public class VtnTabs extends TabActivity{
 							i=2;
 						}
 					});		        
-	    		break;
+			        
+			        over_1 = (ImageView) findViewById(R.id.vg_icono1_1); imagenes.add(over_1);
+					over_2 = (ImageView) findViewById(R.id.vg_icono2_1); imagenes.add(over_2);
+					over_3 = (ImageView) findViewById(R.id.vg_icono3_1); imagenes.add(over_3);
+					over_4 = (ImageView) findViewById(R.id.vg_icono4_1); imagenes.add(over_4);
+					over_5 = (ImageView) findViewById(R.id.vg_icono5_1); imagenes.add(over_5);
+					over_6 = (ImageView) findViewById(R.id.vg_icono6_1); imagenes.add(over_6);
+					over_7 = (ImageView) findViewById(R.id.vg_icono7_1); imagenes.add(over_7);
+					over_8 = (ImageView) findViewById(R.id.vg_icono8_1); imagenes.add(over_8);
+					text_1 = (TextView) findViewById(R.id.vg_icono9_1); textos.add(text_1);
+					text_2 = (TextView) findViewById(R.id.vg_icono10_1); textos.add(text_2);
+					text_3 = (TextView) findViewById(R.id.vg_icono11_1); textos.add(text_3);
+					text_4 = (TextView) findViewById(R.id.vg_icono12_1); textos.add(text_4);
+					text_5 = (TextView) findViewById(R.id.vg_icono13_1); textos.add(text_5);
+					text_6 = (TextView) findViewById(R.id.vg_icono14_1); textos.add(text_6);
+					text_7 = (TextView) findViewById(R.id.vg_icono15_1); textos.add(text_7);
+					text_8 = (TextView) findViewById(R.id.vg_icono16_1); textos.add(text_8);					
+										
+					vg1 = (ViewGroup) findViewById(R.id.vg1_1);
+			        	agregarDrag_and_Drop(vg1,over_1);
+			        vg2 = (ViewGroup) findViewById(R.id.vg2_1);
+			        	agregarDrag_and_Drop(vg2,over_2);
+			        vg3 = (ViewGroup) findViewById(R.id.vg3_1);
+			        	agregarDrag_and_Drop(vg3,over_3);
+			        vg4 = (ViewGroup) findViewById(R.id.vg4_1);
+			        	agregarDrag_and_Drop(vg4,over_4);
+			        vg5 = (ViewGroup) findViewById(R.id.vg5_1);
+			        	agregarDrag_and_Drop(vg5,over_5);
+			        vg6 = (ViewGroup) findViewById(R.id.vg6_1);
+			        	agregarDrag_and_Drop(vg6,over_6);
+			        vg7 = (ViewGroup) findViewById(R.id.vg7_1);
+			        	agregarDrag_and_Drop(vg7,over_7);
+			        vg8 = (ViewGroup) findViewById(R.id.vg8_1);
+			        	agregarDrag_and_Drop(vg8,over_8);
+			        vg9 = (ViewGroup) findViewById(R.id.vg9_1);
+			        	agregarDrag_and_DropTexto(vg9,text_1);
+			        vg10 = (ViewGroup) findViewById(R.id.vg10_1);
+			        	agregarDrag_and_DropTexto(vg10,text_2);
+			        vg11 = (ViewGroup) findViewById(R.id.vg11_1);
+			        	agregarDrag_and_DropTexto(vg11,text_3);
+			        vg12 = (ViewGroup) findViewById(R.id.vg12_1);
+			        	agregarDrag_and_DropTexto(vg12,text_4);
+			        vg13 = (ViewGroup) findViewById(R.id.vg13_1);
+			        	agregarDrag_and_DropTexto(vg13,text_5);
+			        vg14 = (ViewGroup) findViewById(R.id.vg14_1);
+			        	agregarDrag_and_DropTexto(vg14,text_6);
+			        vg15 = (ViewGroup) findViewById(R.id.vg15_1);
+			        	agregarDrag_and_DropTexto(vg15,text_7);
+			        vg16 = (ViewGroup) findViewById(R.id.vg16_1);
+			        	agregarDrag_and_DropTexto(vg16,text_8);
+			        	
+	    		break;	    		
 	        	case R.id.plantilla4:
 	        		setContentView(R.layout.plantilla_4);
 			        imagen1=(ImageView) findViewById(R.id.p4_img1);
@@ -333,9 +451,60 @@ public class VtnTabs extends TabActivity{
 					imagen4.setOnClickListener(new View.OnClickListener(){							
 						public void onClick(View v) {
 							dialog.show();
-							i=4;
+							i=4;						
 						}
 					});
+					
+					over_1 = (ImageView) findViewById(R.id.vg_icono1_1); imagenes.add(over_1);
+					over_2 = (ImageView) findViewById(R.id.vg_icono2_1); imagenes.add(over_2);
+					over_3 = (ImageView) findViewById(R.id.vg_icono3_1); imagenes.add(over_3);
+					over_4 = (ImageView) findViewById(R.id.vg_icono4_1); imagenes.add(over_4);
+					over_5 = (ImageView) findViewById(R.id.vg_icono5_1); imagenes.add(over_5);
+					over_6 = (ImageView) findViewById(R.id.vg_icono6_1); imagenes.add(over_6);
+					over_7 = (ImageView) findViewById(R.id.vg_icono7_1); imagenes.add(over_7);
+					over_8 = (ImageView) findViewById(R.id.vg_icono8_1); imagenes.add(over_8);
+					text_1 = (TextView) findViewById(R.id.vg_icono9_1); textos.add(text_1);
+					text_2 = (TextView) findViewById(R.id.vg_icono10_1); textos.add(text_2);
+					text_3 = (TextView) findViewById(R.id.vg_icono11_1); textos.add(text_3);
+					text_4 = (TextView) findViewById(R.id.vg_icono12_1); textos.add(text_4);
+					text_5 = (TextView) findViewById(R.id.vg_icono13_1); textos.add(text_5);
+					text_6 = (TextView) findViewById(R.id.vg_icono14_1); textos.add(text_6);
+					text_7 = (TextView) findViewById(R.id.vg_icono15_1); textos.add(text_7);
+					text_8 = (TextView) findViewById(R.id.vg_icono16_1); textos.add(text_8);					
+										
+					vg1 = (ViewGroup) findViewById(R.id.vg1_1);
+			        	agregarDrag_and_Drop(vg1,over_1);
+			        vg2 = (ViewGroup) findViewById(R.id.vg2_1);
+			        	agregarDrag_and_Drop(vg2,over_2);
+			        vg3 = (ViewGroup) findViewById(R.id.vg3_1);
+			        	agregarDrag_and_Drop(vg3,over_3);
+			        vg4 = (ViewGroup) findViewById(R.id.vg4_1);
+			        	agregarDrag_and_Drop(vg4,over_4);
+			        vg5 = (ViewGroup) findViewById(R.id.vg5_1);
+			        	agregarDrag_and_Drop(vg5,over_5);
+			        vg6 = (ViewGroup) findViewById(R.id.vg6_1);
+			        	agregarDrag_and_Drop(vg6,over_6);
+			        vg7 = (ViewGroup) findViewById(R.id.vg7_1);
+			        	agregarDrag_and_Drop(vg7,over_7);
+			        vg8 = (ViewGroup) findViewById(R.id.vg8_1);
+			        	agregarDrag_and_Drop(vg8,over_8);
+			        vg9 = (ViewGroup) findViewById(R.id.vg9_1);
+			        	agregarDrag_and_DropTexto(vg9,text_1);
+			        vg10 = (ViewGroup) findViewById(R.id.vg10_1);
+			        	agregarDrag_and_DropTexto(vg10,text_2);
+			        vg11 = (ViewGroup) findViewById(R.id.vg11_1);
+			        	agregarDrag_and_DropTexto(vg11,text_3);
+			        vg12 = (ViewGroup) findViewById(R.id.vg12_1);
+			        	agregarDrag_and_DropTexto(vg12,text_4);
+			        vg13 = (ViewGroup) findViewById(R.id.vg13_1);
+			        	agregarDrag_and_DropTexto(vg13,text_5);
+			        vg14 = (ViewGroup) findViewById(R.id.vg14_1);
+			        	agregarDrag_and_DropTexto(vg14,text_6);
+			        vg15 = (ViewGroup) findViewById(R.id.vg15_1);
+			        	agregarDrag_and_DropTexto(vg15,text_7);
+			        vg16 = (ViewGroup) findViewById(R.id.vg16_1);
+			        	agregarDrag_and_DropTexto(vg16,text_8);
+					
 	    		break;
 	        	case R.id.plantilla5:
 	        		setContentView(R.layout.plantilla_5);
@@ -382,6 +551,57 @@ public class VtnTabs extends TabActivity{
 							i=6;
 						}
 					});
+					
+					over_1 = (ImageView) findViewById(R.id.vg_icono1_1); imagenes.add(over_1);
+					over_2 = (ImageView) findViewById(R.id.vg_icono2_1); imagenes.add(over_2);
+					over_3 = (ImageView) findViewById(R.id.vg_icono3_1); imagenes.add(over_3);
+					over_4 = (ImageView) findViewById(R.id.vg_icono4_1); imagenes.add(over_4);
+					over_5 = (ImageView) findViewById(R.id.vg_icono5_1); imagenes.add(over_5);
+					over_6 = (ImageView) findViewById(R.id.vg_icono6_1); imagenes.add(over_6);
+					over_7 = (ImageView) findViewById(R.id.vg_icono7_1); imagenes.add(over_7);
+					over_8 = (ImageView) findViewById(R.id.vg_icono8_1); imagenes.add(over_8);
+					text_1 = (TextView) findViewById(R.id.vg_icono9_1); textos.add(text_1);
+					text_2 = (TextView) findViewById(R.id.vg_icono10_1); textos.add(text_2);
+					text_3 = (TextView) findViewById(R.id.vg_icono11_1); textos.add(text_3);
+					text_4 = (TextView) findViewById(R.id.vg_icono12_1); textos.add(text_4);
+					text_5 = (TextView) findViewById(R.id.vg_icono13_1); textos.add(text_5);
+					text_6 = (TextView) findViewById(R.id.vg_icono14_1); textos.add(text_6);
+					text_7 = (TextView) findViewById(R.id.vg_icono15_1); textos.add(text_7);
+					text_8 = (TextView) findViewById(R.id.vg_icono16_1); textos.add(text_8);					
+										
+					vg1 = (ViewGroup) findViewById(R.id.vg1_1);
+			        	agregarDrag_and_Drop(vg1,over_1);
+			        vg2 = (ViewGroup) findViewById(R.id.vg2_1);
+			        	agregarDrag_and_Drop(vg2,over_2);
+			        vg3 = (ViewGroup) findViewById(R.id.vg3_1);
+			        	agregarDrag_and_Drop(vg3,over_3);
+			        vg4 = (ViewGroup) findViewById(R.id.vg4_1);
+			        	agregarDrag_and_Drop(vg4,over_4);
+			        vg5 = (ViewGroup) findViewById(R.id.vg5_1);
+			        	agregarDrag_and_Drop(vg5,over_5);
+			        vg6 = (ViewGroup) findViewById(R.id.vg6_1);
+			        	agregarDrag_and_Drop(vg6,over_6);
+			        vg7 = (ViewGroup) findViewById(R.id.vg7_1);
+			        	agregarDrag_and_Drop(vg7,over_7);
+			        vg8 = (ViewGroup) findViewById(R.id.vg8_1);
+			        	agregarDrag_and_Drop(vg8,over_8);
+			        vg9 = (ViewGroup) findViewById(R.id.vg9_1);
+			        	agregarDrag_and_DropTexto(vg9,text_1);
+			        vg10 = (ViewGroup) findViewById(R.id.vg10_1);
+			        	agregarDrag_and_DropTexto(vg10,text_2);
+			        vg11 = (ViewGroup) findViewById(R.id.vg11_1);
+			        	agregarDrag_and_DropTexto(vg11,text_3);
+			        vg12 = (ViewGroup) findViewById(R.id.vg12_1);
+			        	agregarDrag_and_DropTexto(vg12,text_4);
+			        vg13 = (ViewGroup) findViewById(R.id.vg13_1);
+			        	agregarDrag_and_DropTexto(vg13,text_5);
+			        vg14 = (ViewGroup) findViewById(R.id.vg14_1);
+			        	agregarDrag_and_DropTexto(vg14,text_6);
+			        vg15 = (ViewGroup) findViewById(R.id.vg15_1);
+			        	agregarDrag_and_DropTexto(vg15,text_7);
+			        vg16 = (ViewGroup) findViewById(R.id.vg16_1);
+			        	agregarDrag_and_DropTexto(vg16,text_8);
+					
 	    		break;	        
 	        }
 	        
@@ -391,12 +611,14 @@ public class VtnTabs extends TabActivity{
 	 				View ve = findViewById(R.id.comic);
 	 		        ve.setDrawingCacheEnabled(true);
 	 		        Bitmap b = ve.getDrawingCache();
-	 		        String extr = Environment.getExternalStorageDirectory().toString();
+	 		        String extr = Environment.getExternalStorageDirectory().toString() + File.separator + "Comics";
 	 		        File myPath = new File(extr);
-	 		        if (!myPath.exists()){
-	 		            boolean result = myPath.mkdir();
-	 		        } 		        
-	 		        myPath = new File(extr, getString(R.string.app_name) + ".jpg");
+	 		        if(!myPath.exists()){
+	 		        	myPath.mkdir();
+	 		        }	 		        
+	 		        
+	 		        myPath = new File(extr, getString(R.string.app_name) + ".jpg");	
+	 		        	 		        
 	 		        FileOutputStream fos = null;
 	 		        try {
 	 		            fos = new FileOutputStream(myPath);
@@ -419,8 +641,7 @@ public class VtnTabs extends TabActivity{
 			compartir = (Button) findViewById(R.id.twitter);			
 			compartir.setOnClickListener(new OnClickListener(){
 				public void onClick(View arg){
-					intent = new Intent(P1_comic.this,AndroidTwitterActivity.class);		        
-					startActivity(intent);
+					crearDialogoOpciones().show();
 				} 			
 			});
 			
@@ -438,10 +659,268 @@ public class VtnTabs extends TabActivity{
 		 * Descripción: Permite agregar la funcionalidad de Dran and Drop tanto al
 		 * 				layout contenedor, como a la imagen dentro de el.
 		 */		
+		public void agregarDrag_and_Drop(ViewGroup vg, final ImageView img){
+			vg.setOnTouchListener(new View.OnTouchListener(){			                        
+	        	public boolean onTouch(View v, MotionEvent event){
+	        		v.setFocusable(true);
+	        		v.bringToFront();
+	        		switch(event.getActionMasked()){
+	        			case MotionEvent.ACTION_MOVE:
+	        				int x = (int)event.getX() - offset_x;
+	        				int y = (int)event.getY() - offset_y;
+	                        int w = getWindowManager().getDefaultDisplay().getWidth() - 100;
+	                        int h = getWindowManager().getDefaultDisplay().getHeight() - 100;
+	                        if(x > w)
+	                            x = w;
+	                        if(y > h)
+	                            y = h;
+	                        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
+	                        		new ViewGroup.MarginLayoutParams(
+	                        				img.getWidth(),
+	                        				img.getHeight()));
+	                        lp.setMargins(x, y, 0, 0);			 
+	                        selected_item.setLayoutParams(lp);
+                        break;
+	        			default:
+	        				v.setFocusable(false);
+        				break;
+                    }
+	        		return true;
+                }
+	        });
+			
+			img.setOnTouchListener(new View.OnTouchListener(){			                        
+	        	public boolean onTouch(View v, MotionEvent event){
+	        		switch(event.getAction()){
+                    	case MotionEvent.ACTION_DOWN:
+                    		offset_x = (int)event.getX();
+                            offset_y = (int)event.getY();
+                            selected_item = v;
+                        break;
+                    }			                                 
+	        		return false;
+	        	}
+            });
+		}
 		
+		/*
+		 * Método: agregarDrag_and_DropTexto(ViewGroup vg, final TextView text);
+		 * Uso: agregarDrag_and_DropTexto(vg,text);
+		 * ----------------------------------------
+		 * Descripción: Controlador de Drag and Drop para el texto.
+		 */
+		public void agregarDrag_and_DropTexto(ViewGroup vg, final TextView text){
+			vg.setOnTouchListener(new View.OnTouchListener(){
+	        	public boolean onTouch(View v, MotionEvent event){
+	        		v.setFocusable(true);
+	        		v.bringToFront();
+	        		switch(event.getActionMasked()){
+	        			case MotionEvent.ACTION_MOVE:
+	        				int x = (int)event.getX() - offset_x;
+	        				int y = (int)event.getY() - offset_y;
+	                        int w = getWindowManager().getDefaultDisplay().getWidth() - 100;
+	                        int h = getWindowManager().getDefaultDisplay().getHeight() - 100;
+	                        if(x > w)
+	                            x = w;
+	                        if(y > h)
+	                            y = h;
+	                        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
+	                        		new ViewGroup.MarginLayoutParams(
+	                        				text.getWidth(),
+	                        				text.getHeight()));
+	                        lp.setMargins(x, y, 0, 0);			 
+	                        selected_item.setLayoutParams(lp);
+                        break;
+	        			default:
+	        				v.setFocusable(false);
+        				break;
+                    }
+	        		return true;
+                }
+	        });
+			
+			text.setOnTouchListener(new View.OnTouchListener(){			                        
+	        	public boolean onTouch(View v, MotionEvent event){
+	        		switch(event.getAction()){
+                    	case MotionEvent.ACTION_DOWN:
+                    		offset_x = (int)event.getX();
+                            offset_y = (int)event.getY();
+                            selected_item = v;
+                        break;
+                    }			                                 
+	        		return false;
+	        	}
+            });
+		}
 		
-		
-		
+		/*
+		 * Método: onActivityResult(int requestCode, int resultCode, Intent data);
+		 * Uso: onActivityResult(requestCode,resultCode,data);
+		 * ---------------------------------------------------
+		 * Descripción: Controlador de la cámara.		 
+		 */		
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent data){
+			if(resultCode != RESULT_OK) return;	   
+		    switch (requestCode){
+		    	case PICK_FROM_CAMERA:
+		    		doCrop();		    	
+		    	break;		    
+			    case PICK_FROM_FILE: 
+			    	mImageCaptureUri = data.getData();		    	
+			    	doCrop();	    
+		    	break;	    		    
+			    case CROP_FROM_CAMERA:	    	
+			    	Bundle extras = data.getExtras();	
+			        if(extras != null){	        	
+			        	photo = extras.getParcelable("data");
+			        	switch(bundle_comic){
+			        		case R.id.plantilla1:
+					            switch(i){
+					            	case 1:				            					            						            	
+					            		imagen1.setImageBitmap(photo);				            		
+				            		break;
+					            	case 2:
+					            		imagen2.setImageBitmap(photo);
+					            	break;
+					            	case 3:				            				            		
+					            		imagen3.setImageBitmap(photo);
+					            	break;
+					            	case 4:
+					            		imagen4.setImageBitmap(photo);
+					            	break;
+					            	case 5:
+					            		imagen5.setImageBitmap(photo);
+					            	break;		            
+					            }
+				            break;
+			        		case R.id.plantilla2:
+					            switch(i){
+					            	case 1: 
+					            		imagen1.setImageBitmap(photo);
+				            		break;
+					            	case 2:
+					            		imagen2.setImageBitmap(photo);
+					            	break;
+					            	case 3:
+					            		imagen3.setImageBitmap(photo);
+					            	break;
+					            	case 4:
+					            		imagen4.setImageBitmap(photo);
+					            	break;		            
+					            }
+				            break;
+			        		case R.id.plantilla3:
+					            switch(i){
+					            	case 1: 
+					            		imagen1.setImageBitmap(photo);
+				            		break;
+					            	case 2:
+					            		imagen2.setImageBitmap(photo);
+					            	break;            
+					            }
+				            break;
+			        		case R.id.plantilla4:
+					            switch(i){
+					            	case 1: 
+					            		imagen1.setImageBitmap(photo);
+				            		break;
+					            	case 2:
+					            		imagen2.setImageBitmap(photo);
+					            	break;
+					            	case 3:
+					            		imagen3.setImageBitmap(photo);
+					            	break;
+					            	case 4:
+					            		imagen4.setImageBitmap(photo);
+					            	break;            
+					            }
+				            break;
+			        		case R.id.plantilla5:
+					            switch(i){
+					            	case 1: 
+					            		imagen1.setImageBitmap(photo);
+				            		break;
+					            	case 2:
+					            		imagen2.setImageBitmap(photo);
+					            	break;
+					            	case 3:
+					            		imagen3.setImageBitmap(photo);
+					            	break;
+					            	case 4:
+					            		imagen4.setImageBitmap(photo);
+					            	break;
+					            	case 5:
+					            		imagen5.setImageBitmap(photo);
+					            	break;
+					            	case 6:
+					            		imagen5.setImageBitmap(photo);
+					            	break;
+					            }
+				            break;
+			        	}
+			        }		        
+			        File f = new File(mImageCaptureUri.getPath());            		        
+			        if(f.exists())f.delete();		        
+		        break;
+		    }
+		}
+			
+		private void doCrop(){
+			final ArrayList<CropOption> cropOptions = new ArrayList<CropOption>();	    
+			Intent intent = new Intent("com.android.camera.action.CROP");
+			intent.setType("image/*");	        
+	        List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent,0);	        
+	        int size = list.size();	       
+	        if(size == 0){
+	        	Toast.makeText(this, "Can not find image crop app", Toast.LENGTH_SHORT).show();	        
+	        	return;
+	        }else{
+	        	intent.setData(mImageCaptureUri);	                        
+	        	intent.putExtra("outputX",200);
+	            intent.putExtra("outputY",200);
+	            intent.putExtra("aspectX",1);
+	            intent.putExtra("aspectY",1);
+	            intent.putExtra("scale",true);
+	            intent.putExtra("return-data",true);	            
+	            if(size == 1){
+	            	Intent i = new Intent(intent);
+	            	ResolveInfo res	= list.get(0);		        	
+	            	i.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));		        	
+		        	startActivityForResult(i, CROP_FROM_CAMERA);
+	        	}else{
+			        for(ResolveInfo res : list){
+			        	final CropOption co = new CropOption();			        	
+			        	co.title = getPackageManager().getApplicationLabel(res.activityInfo.applicationInfo);
+			        	co.icon	= getPackageManager().getApplicationIcon(res.activityInfo.applicationInfo);
+			        	co.appIntent= new Intent(intent);			        	
+			        	co.appIntent.setComponent( new ComponentName(res.activityInfo.packageName, res.activityInfo.name));			        	
+			            cropOptions.add(co);
+			        }		        
+			        CropOptionAdapter adapter = new CropOptionAdapter(getApplicationContext(), cropOptions);			        
+			        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			        builder.setTitle("Choose Crop App");
+			        
+			        builder.setAdapter( adapter, new DialogInterface.OnClickListener(){
+			            public void onClick( DialogInterface dialog, int item ){
+			                startActivityForResult( cropOptions.get(item).appIntent, CROP_FROM_CAMERA);
+			            }
+			        });
+		        
+			        builder.setOnCancelListener( new DialogInterface.OnCancelListener(){
+			            public void onCancel( DialogInterface dialog ){			              
+			                if(mImageCaptureUri != null ){
+			                	getContentResolver().delete(mImageCaptureUri,null,null);
+			                    mImageCaptureUri = null;
+			                }
+			            }
+			        });			        
+			        AlertDialog alert = builder.create();
+			        alert.show();
+	        	}
+	        }
+		}
+
 		/*
 		 * Clase interna: P2_symbols
 		 * -----------------------
@@ -453,7 +932,7 @@ public class VtnTabs extends TabActivity{
 				
 			Button aceptar;
 			ImageView principal, img1, img2, img3, img4, img5, img6, img7;
-			int selected = 0;
+			int selected = 1;
 			
 			@Override
 			public void onCreate(Bundle savedInstanceState){    	
@@ -521,34 +1000,30 @@ public class VtnTabs extends TabActivity{
 					public void onClick(View v){								 		      		 		       
 		 		        switch(selected){
 		 		        	case 1:
-		 		        		imagenes.get(0).setImageResource(R.drawable.icono1);
-		 		        		imagenes.remove(0);
+		 		        		imagenes.get(0).setImageResource(R.drawable.icono1);		 		        		
 		 		        	break;
 		 		        	case 2:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono2);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        	case 3:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono3);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        	case 4:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono4);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        	case 5:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono5);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        	case 6:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono6);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        	case 7:
 		 		        		imagenes.get(0).setImageResource(R.drawable.icono7);
-		 		        		imagenes.remove(0);
 		 		        	break;
 		 		        }
+		 		        imagenes.get(0).bringToFront();
+		        		imagenes.get(0).setFocusable(true);
+		        		imagenes.remove(0);
 		 		        tabHost.setCurrentTab(0);
 					}
 				});
@@ -569,7 +1044,7 @@ public class VtnTabs extends TabActivity{
 			ImageView btnblack, btnblue, btncyan, btndarkgray, btngray, btnlightgray, btnmagenta, btnred, btnverde, btnwhite, btnyellow; 
 			int color, selected = 0;
 			Button aceptar;
-			boolean bandera=false;
+			
 				
 			@Override
 		    public void onCreate(Bundle savedInstanceState){    	
@@ -606,16 +1081,74 @@ public class VtnTabs extends TabActivity{
 		        
 		        aceptar = (Button) findViewById(R.id.textoAceptar);
 				aceptar.setOnClickListener(new OnClickListener(){				
-					public void onClick(View v){						
-						View ve = findViewById(R.id.LayoutBurbuja);						
-						ve.setVisibility(1);
-						ve.setVisibility(0);
-		 		        ve.setDrawingCacheEnabled(true);		 		        
-		 		        Bitmap b = ve.getDrawingCache();		 		        
-		 		        imagenes.get(0).setImageBitmap(b);
-		 		       	imagenes.remove(0);		 		
-		 		       	EditText et = (EditText)findViewById(R.id.Burbuja);
-						et.clearComposingText();
+					public void onClick(View v){
+						TextView texto = textos.get(0); 						
+						switch(selected){
+							case 1:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-16777216);
+								texto.setTextColor(-1);								
+							break;
+							case 2:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-16776961);
+								texto.setTextColor(-16777216);
+							break;
+							case 3:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-16711681);
+								texto.setTextColor(-16777216);
+							break;
+							case 4:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-12303292);
+								texto.setTextColor(-16777216);
+							break;
+							case 5:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-7829368);
+								texto.setTextColor(-16777216);
+							break;
+							case 6:								
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-3355444);
+								texto.setTextColor(-16777216);
+							break;
+							case 7:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-65281);
+								texto.setTextColor(-16777216);
+							break;
+							case 8:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-65536);
+								texto.setTextColor(-16777216);
+							break;
+							case 9:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-16711936);
+								texto.setTextColor(-16777216);
+							break;
+							case 10:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-1);
+								texto.setTextColor(-16777216);
+							break;
+							case 11:
+								texto.append(edit.getText());
+								texto.setBackgroundColor(-256);
+								texto.setTextColor(-16777216);
+							break;							
+						}
+						edit.setText("");
+						texto.setTextSize(20);
+						texto.setPadding(20,0,20,5);						
+						texto.setKeyListener(null);
+						texto.setLeft(100);
+						texto.setTop(150);
+						texto.bringToFront();
+						texto.setFocusable(true);
+						textos.remove(0);
 		 		        tabHost.setCurrentTab(0);
 					}
 				});
@@ -628,66 +1161,77 @@ public class VtnTabs extends TabActivity{
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -1;
 				      	this.edit.setTextColor(color);
+				      	selected = 1;
 					}break;
 					case R.id.c_blue:{
 						this.color = -16776961;
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 2;
 					}break;
 					case R.id.c_cyan:{
 						this.color = -16711681;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 3;
 					}break;				
 					case R.id.c_darkgray:{
 						this.color = -12303292;
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 4;
 					}break;
 					case R.id.c_gray:{
 						this.color = -7829368;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 5;
 					}break;
 					case R.id.c_lightgray:{
 						this.color = -3355444;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 6;
 					}break;
 					case R.id.c_magenta:{
 						this.color = -65281;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 7;				      	
 					}break;
 					case R.id.c_red:{
 						this.color = -65536;
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 8;
 					}break;
 					case R.id.c_verde:{
 						this.color = -16711936;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 9;
 					}break;
 					case R.id.c_white:{
 						this.color = -1;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 10;
 					}break;
 					case R.id.c_yellow:{
 						this.color = -256;		
 				      	this.edit.setBackgroundColor(color);
 				      	this.color = -16777216;
 				      	this.edit.setTextColor(color);
+				      	selected = 11;
 					}break;
 				}
 			}	
@@ -708,6 +1252,34 @@ public class VtnTabs extends TabActivity{
 		        public void onClick(DialogInterface dialog, int which) {
 		            dialog.cancel();
 		        }
+		    });		 
+		    return builder.create();
+		}
+		
+		/*
+		 * Método: crearDialogoOpciones.
+		 * Uso: crearDialogoOpciones();
+		 * ---------------------------
+		 * Descripción: Muestra las opciones de redes sociales a las cuales el usuario puede dirigirse
+		 * 				y mostrar su comic.
+		 */
+		public Dialog crearDialogoOpciones(){
+		    AlertDialog.Builder builder = new AlertDialog.Builder(this);		 
+		    builder.setTitle("Redes Sociales");
+		    builder.setMessage("Ir a: ");
+		    builder.setPositiveButton("Facebook", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com"));
+		    	startActivity(browserIntent);
+		        //dialog.cancel();
+		    }
+		    });
+		    builder.setNegativeButton("Twitter", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.twitter.com"));
+		    	startActivity(browserIntent);
+		        //dialog.cancel();
+		    }
 		    });		 
 		    return builder.create();
 		}
