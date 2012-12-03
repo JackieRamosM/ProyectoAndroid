@@ -37,7 +37,7 @@ public class VtnPlantillas extends Activity implements OnClickListener{
         img4.setOnClickListener(this);
         img5.setOnClickListener(this);        
     }
-	
+   
 	public void onClick(View arg0){
 		switch(arg0.getId()){
 			case R.id.plantilla1:
